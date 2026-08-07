@@ -1,0 +1,251 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto";
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1F2937;
+    padding: 0.5rem 10rem;
+}
+
+.logo{
+    font-size: 24px;
+    color: #F9FAF8;
+}
+.nav-links{
+    color: #C5C8CE;
+    list-style: none;
+    display: flex;
+    font-size: 18px;
+}
+
+.nav-link{
+    margin-right: 2.6rem;
+}
+
+.hero-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 10rem;
+    background: #1F2937;
+    color: white;
+}
+.hero-img{
+    width: 100%;
+    max-width: 400px;
+    margin-left: 3rem;
+}
+.left-hero h1{
+    font-size: 48px;
+    color: #F9FAF8;
+    font-weight: 900;
+    
+}
+.left-hero p {
+    font-size: 18px;
+    color: #C5C8CE;
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+}
+
+.hero-btn{
+    background: #3882F6;
+    padding: 0.2rem 2rem;
+    border: none;
+    border-radius: 7px;
+    color: #F9FAF8;
+}
+/* Info section */
+
+.info-section h2{
+    font-size: 36px;
+    color: #1F2937;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.cards{
+    display: flex;
+    margin: 3rem 14rem;
+}
+.card{
+    text-align: center;
+}
+
+.card-img{
+    max-width: 10rem;
+    height: 10rem;
+    border: 3px solid #3882F6;
+    border-radius: 0.5rem;
+    object-fit: contain;
+    background-color: #3882F6;
+    margin: 0rem auto;
+}
+.card-picture{
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+    margin: 0.8rem auto;
+}
+.card-txt{
+    font-size: 0.8rem;
+    color: #818892;
+    margin-top: 0.5rem;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+@media (max-width: 1150px) {
+   .nav-bar{
+        padding: 0.5rem 5rem;
+   }
+   .nav-links{
+    display: none;
+   }
+    .hero-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .hero-img{
+        order: 1;
+        max-width: 400px;
+        margin-right: 5rem;
+        margin-bottom: 2rem;
+    }
+    .left-hero{
+        order: 2;
+    }
+    .left-hero h1{
+        font-size: 40px;
+        padding-bottom: 0.5rem;
+        text-align: center;
+    }
+    .hero-span{
+        color: #3882F6;
+        text-align: center;
+    }
+    .left-hero p{
+        font-size: 15px;
+        text-align: center;
+    }
+    .hero-btn{ 
+       display: block;
+       width: 200px;
+       margin: 1rem auto;
+    }
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 3rem 5rem;
+}
+.card{
+    margin-bottom: 2rem;
+}
+.card-img{
+    max-width: 11rem;
+    height: 15rem;
+}
+.card-picture{
+    width: 8rem;
+    height: 10rem;
+    margin: 2rem auto;
+}
+.card-txt{
+    font-size: 1rem;
+}
+}
+@media (max-width: 600px) {
+    .nav-bar{
+        padding: 0.5rem 2rem;
+   }
+   .hero-section{
+        padding: 4rem 1rem;
+   }
+   .hero-img{
+        width: 10rem;
+        margin-right: 4rem;
+        margin-bottom: 2rem;
+    }
+    .left-hero h1{
+        font-size: 3rem;
+        padding-bottom: 0.5rem;
+        text-align: center;
+    }
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 3rem 0rem;
+}
+.card{
+    margin-bottom: 2rem;
+}
+.card-img{
+    max-width: 10rem;
+    height: 15rem;
+}
+.card-picture{
+    width: 7rem;
+    height: 10rem;
+    margin: 2rem auto;
+}
+.card-txt{
+    font-size: 1rem;
+}
+}
