@@ -53,7 +53,6 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
-
 .nav-bar{
     display: flex;
     justify-content: space-between;
@@ -65,6 +64,24 @@ h1, h2, h3, h4, h5, h6 {
 .logo{
     font-size: 24px;
     color: #F9FAF8;
+}
+.toggle-button{
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
 }
 .nav-links{
     color: #C5C8CE;
@@ -209,9 +226,6 @@ footer{
    .nav-bar{
         padding: 0.5rem 5rem;
    }
-   .nav-links{
-    display: none;
-   }
     .hero-section{
         display: flex;
         flex-direction: column;
@@ -299,11 +313,47 @@ blockquote + p {
 }
 }
 @media (max-width: 800px) {
+.nav-links{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem !important;
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 5rem 1.5rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+.toggle-button{
+    display: block;
+    z-index: 999;
+}
+.nav-links.active{
+    display: flex;
+}
+.toggle-button.active .bar:nth-child(2){
+    opacity: 0;
+}
+.toggle-button.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+.toggle-button.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
 .cta-container{
     margin: 5rem 3rem;
 }
 }
 @media (max-width: 600px) {
+    .nav-links{
+    height: 100vh;
+    width: 100%z;
+    position: fixed;
+    top: 0;
+}
     .nav-bar{
         padding: 0.5rem 2rem;
    }

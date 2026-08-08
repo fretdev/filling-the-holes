@@ -13,6 +13,11 @@
     <header>
         <nav class="nav-bar">
             <p class="logo">ORAIMO</p>
+            <button class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="nav-links">
                 <li class="nav-link">Home</li>
                 <li class="nav-link">About</li>
@@ -113,5 +118,14 @@
     <footer>
         <small>Copyright @ The Odin Project 2026</small>
     </footer>
+    <script>
+        const  toggleButton = document.querySelector('.toggle-button')
+        const  navLinks = document.querySelector('.nav-links')
+
+        toggleButton.addEventListener('click',()=>{
+            toggleButton.classList.toggle('active')
+            navLinks.classList.toggle('active')
+        })
+    </script>
 </body>
 </html>
